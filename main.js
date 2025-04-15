@@ -15,8 +15,8 @@ function addTask() {
   li.appendChild(completedBtn);
   li.appendChild(deleteBtn);
 
-  completedBtn.innerText = "✔"
-  deleteBtn.innerHTML = "❌"
+  completedBtn.innerHTML = "&#10003"
+  deleteBtn.innerHTML = "&#10006"
 
 
   list.appendChild(li);
