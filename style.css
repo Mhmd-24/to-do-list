@@ -23,7 +23,7 @@ body{
     margin-left: 10px;
 }
 
-#task-input{
+#task-container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,7 +34,7 @@ body{
     margin-bottom: 25px;
 }
 
-#task{
+#task-input{
     flex: 1;
     border: none;
     outline: none;
@@ -43,8 +43,8 @@ body{
     font-weight: 16px;
 }
 
-#task-btn{
-    border: none;
+#task-btn, .filter-btn{
+    border: 2px solid #ff5945;
     outline: none;
     padding: 15px 35px;
     background-color: #ff5945;
@@ -54,11 +54,32 @@ body{
     border-radius: 25px;
 }
 
+#filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-btn{
+    padding: 10px 25px;
+    width: 125px;
+}
+
+#task-btn:hover,
+.filter-btn:hover {
+    border: 2px solid #ff5945;
+    outline: none;
+    background-color: white;
+    color: #ff5945;
+    transition-duration: 0.5s;
+}
+
 #tasks-list{
     padding: 0 25px;
 }
 
-#tasks-list li{
+.task{
     list-style: none;
     font-size: 17px;
     padding: 15px 10px 15px 50px;
@@ -67,7 +88,7 @@ body{
     position: relative;
 }
 
-#tasks-list li::before{
+.task::before{
     content: '';
     position: absolute;
     height: 30px;
@@ -80,16 +101,16 @@ body{
     left: 8px;
 }
 
-#tasks-list li.checked{
+.task.checked{
     color: #505050;
     text-decoration: line-through;
 }
 
-#tasks-list li.checked::before{
+.task.checked::before{
     background-image: url(Images/Checked.png);
 }
 
-#tasks-list li span{
+.task span{
     position: absolute;
     right: 0;
     top: 5px;
@@ -102,6 +123,6 @@ body{
     border-radius: 50%;
 }
 
-#tasks-list li span:hover{
+.task span:hover{
     background-color: #bebebe;
 }

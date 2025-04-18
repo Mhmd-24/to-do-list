@@ -1,22 +1,23 @@
-const task = document.getElementById("task");
+const taskInput = document.getElementById("task-input");
 const list = document.getElementById("tasks-list");
 
 function addTask() {
 
-  const taskText = task.value.trim();
+  const taskText = taskInput.value.trim();
   
   if (taskText === "") {
     alert("Please enter a task!");
   }else{
     const li = document.createElement("li");
     li.innerHTML = taskText;
+    li.classList.add("task");
     list.appendChild(li);
     const remove = document.createElement("span");
     remove.innerHTML = "&#10006";
     li.appendChild(remove);
   }
 
-  task.value = "";
+  taskInput.value = "";
   saveData();
 }
 
@@ -39,3 +40,31 @@ function showTask(){
 }
 
 showTask();
+
+function filter(filter) {
+  const tasks = document.querySelectorAll(".task");
+  
+  tasks.forEach(task => {
+    if(filter === "completed"){
+
+      if(task.classList.contains("checked")){
+      task.style.display = 'block';
+      }else{
+      task.style.display = 'none';
+      }
+
+    }else if(filter === "pending"){
+
+      if(task.classList.contains("checked")){
+        task.style.display = 'none';
+      }else{
+        task.style.display = 'block';
+      }
+
+    }else{
+
+      task.style.display = 'block';
+
+    }
+  });
+}
