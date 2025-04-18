@@ -84,3 +84,20 @@ body{
 #tasks-list li.checked::before{
     background-image: url(Images/Checked.png);
 }
+
+#tasks-list li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #313131;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+#tasks-list li span:hover{
+    background-color: #bebebe;
+}
