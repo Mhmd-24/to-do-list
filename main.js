@@ -1,8 +1,9 @@
+const task = document.getElementById("task");
+const list = document.getElementById("tasks-list");
+
 function addTask() {
 
-  const task = document.getElementById("task");
   const taskText = task.value.trim();
-  const list = document.getElementById("tasks-list");
   
   if (taskText === "") {
     alert("Please enter a task!");
@@ -16,12 +17,25 @@ function addTask() {
   }
 
   task.value = "";
+  saveData();
 }
 
 list.addEventListener("click", function(e){
   if(e.target.tagName === "LI"){
     e.target.classList.toggle("checked");
+    saveData();
   }else if(e.target.tagName === "SPAN"){
     e.target.parentElement.remove()
+    saveData();
   }
 }, false);
+
+function saveData(){
+  localStorage.setItem("task", list.innerHTML);
+}
+
+function showTask(){
+  list.innerHTML = localStorage.getItem("task");
+}
+
+showTask();

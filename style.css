@@ -54,6 +54,10 @@ body{
     border-radius: 25px;
 }
 
+#tasks-list{
+    padding: 0 25px;
+}
+
 #tasks-list li{
     list-style: none;
     font-size: 17px;
