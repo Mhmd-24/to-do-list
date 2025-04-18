@@ -1,0 +1,86 @@
+body{
+    background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+#todo-list{
+    width: 100%;
+    max-width: 540px;
+    background-color: white;
+    margin: 100px auto 25px;
+    padding: 50px 25px;
+    border-radius: 15px;
+}
+
+#todo-list h1{
+    color: #002765;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+}
+
+#todo-list h1 img{
+    width: 35px;
+    margin-left: 10px;
+}
+
+#task-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #edeef0;
+    border-radius: 25px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+#task{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 16px;
+}
+
+#task-btn{
+    border: none;
+    outline: none;
+    padding: 15px 35px;
+    background-color: #ff5945;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#tasks-list li{
+    list-style: none;
+    font-size: 17px;
+    padding: 15px 10px 15px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+#tasks-list li::before{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-image: url(Images/Unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+#tasks-list li.checked{
+    color: #505050;
+    text-decoration: line-through;
+}
+
+#tasks-list li.checked::before{
+    background-image: url(Images/Checked.png);
+}
