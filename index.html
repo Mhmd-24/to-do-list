@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="list">
-        <h1>Welcome to <span>My To Do List</span></h1>
-        <section>
-            <label for="task">Task:</label>
-            <input type="text" name="task" id="task">
-            <button id="task-btn" class="btn" onclick="addTask()">Add Task</button>
-        </section>
-        <section id="tasks">
-            <ul id="tasks-list"></ul>
+    <section id="todo-list">
+        <h1>Welcome to My To Do List <img src="Images/List.png" alt="List"></h1>
+        <section id="list">
+            <section id="task-input">
+                <input type="text" name="task" id="task" placeholder="Enter a task">
+                <button id="task-btn" class="btn" onclick="addTask()">Add Task</button>
+            </section>
+            
+            <ul id="tasks-list">
+                <!-- <li class="checked">Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li> -->
+            </ul>
+            
         </section>
     </section>
 
