@@ -45,26 +45,17 @@ function filter(filter) {
   const tasks = document.querySelectorAll(".task");
   
   tasks.forEach(task => {
-    if(filter === "completed"){
 
-      if(task.classList.contains("checked")){
-      task.style.display = 'block';
-      }else{
-      task.style.display = 'none';
-      }
-
-    }else if(filter === "pending"){
-
-      if(task.classList.contains("checked")){
-        task.style.display = 'none';
-      }else{
-        task.style.display = 'block';
-      }
-
-    }else{
-
-      task.style.display = 'block';
-
+    switch(filter){
+      case 'all':
+        task.style.display = 'block'
+        break;
+      case "completed" :
+        task.style.display = task.classList.contains("checked") ? 'block' : 'none';
+        break;
+      case 'pending':
+        task.style.display = task.classList.contains("checked") ? 'none' : 'block';
     }
+    
   });
 }
